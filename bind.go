@@ -26,7 +26,7 @@ func Bind(r *http.Request, v any) error {
 		fieldValue := val.Field(i)
 		// 判断字段值是否为零值
 		if fieldValue.IsZero() {
-			return fmt.Errorf("请求体参数不能为空, %v", fieldValue)
+			return fmt.Errorf("请求体参数[%v]不能为空,当前值[%v]", val.Type().Field(i).Name, fieldValue)
 		}
 	}
 
