@@ -19,5 +19,16 @@ func Bind(r *http.Request, v any) error {
 	if err != nil {
 		return fmt.Errorf("failed to decode JSON: %w", err)
 	}
+
+	val := reflect.ValueOf(v).Elem()
+	// 遍历结构体字段
+	for i := 0; i < val.NumField(); i++ {
+		fieldValue := val.Field(i)
+		// 判断字段值是否为零值
+		if fieldValue.IsZero() {
+			return fmt.Errorf("请求体参数不能为空, %v", fieldValue)
+		}
+	}
+
 	return nil
 }
