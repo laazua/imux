@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/Sseve/imux"
-	"github.com/Sseve/imux/_example/api"
-	"github.com/Sseve/imux/_example/mws"
 	"github.com/Sseve/imux/env"
+	"github.com/Sseve/imux/example/api"
+	"github.com/Sseve/imux/example/mws"
 )
 
 // -ldflags="-X main.version=0.1.1"

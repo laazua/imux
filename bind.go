@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"reflect"
 )
 
 func Bind(r *http.Request, v any) error {
