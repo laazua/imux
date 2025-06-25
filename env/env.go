@@ -2,6 +2,8 @@ package env
 
 import (
 	"bufio"
+	"fmt"
+	"log/slog"
 	"os"
 	"strconv"
 	"strings"
@@ -64,4 +66,14 @@ func ParseTDuration(s string) time.Duration {
 // ParseSList 将逗号分隔的字符串转成字符串列表
 func ParseSList(s string) []string {
 	return strings.Split(s, ",")
+}
+
+// wrap os.Getenv
+func GetOsEnv(key string) string {
+	value := os.Getenv(key)
+	if value == "" {
+		slog.Error("请完成配置文件.env的配置", slog.String("error", key))
+		panic(fmt.Sprintf("%v key is empty!", key))
+	}
+	return value
 }

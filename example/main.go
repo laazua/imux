@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Sseve/imux"
-	"github.com/Sseve/imux/env"
-	"github.com/Sseve/imux/example/api"
-	"github.com/Sseve/imux/example/mws"
+	"imux"
+	"imux/env"
+	"imux/example/api"
+	"imux/example/mws"
 )
 
 // -ldflags="-X main.version=0.1.1"

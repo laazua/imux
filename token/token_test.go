@@ -1,10 +1,11 @@
 package token
 
 import (
-	"github.com/Sseve/imux/env"
 	"log"
 	"os"
 	"testing"
+
+	"imux/env"
 )
 
 func TestCreate(t *testing.T) {

@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/Sseve/imux"
+	"imux"
 )
 
 // Ping 全局路由控制器示例
